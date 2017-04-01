@@ -30,12 +30,10 @@ export class TodoPage {
     let id = this.navParams.get('id');
 
     if (id == null) {
-      console.log('Nop');
       this.pageTitle = "Create";
       this.id = null
       this.persistFunction = this.create;
     } else {
-      console.log('Yep');
       this.pageTitle = "Edit";
       this.id = id;
       this.persistFunction = this.update;
@@ -53,12 +51,10 @@ export class TodoPage {
   }
 
   create(input) {
-    console.log('create');
     this.todos.push(input.todo);
   }
 
   update(input) {
-    console.log('update');
     this.todos.update(input.id, input.todo);
   }
 }

@@ -37,9 +37,7 @@ export class HomePage {
         buttons: [
           {
             text: "Cancel",
-            handler: data => {
-              console.log('Cancel clicked');
-            }
+            handler: data => {}
           },
           {
             text: "Delete",

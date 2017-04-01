@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card *ngFor="let todo of todos | async">
+  <ion-card *ngFor="let todo of todos | async"  (swipe)="remove(todo.$key)">
     <ion-card-header>
       <ion-card-title>
         {{todo.title}}
