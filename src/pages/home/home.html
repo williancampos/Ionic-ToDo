@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      ToDo App
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let todo of todos | async">
+    <ion-card-header>
+      <ion-card-title>
+        {{todo.title}}
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p text-right><i>Due on {{showDate(todo.deadline) | date: 'dd/MM/yyyy'}}</i></p>
+    </ion-card-content>
+    <ion-row no-padding>
+      <ion-col>
+        <button ion-button clear color="dark" (click)="detail(todo)">
+          <ion-icon name="create"></ion-icon>
+        </button>
+        <button ion-button clear color="dark" (click)="remove(todo.$key)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-fab bottom right>
+    <button ion-fab color="danger" (click)="add()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>
