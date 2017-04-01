@@ -42,12 +42,12 @@ export class TodoPage {
   }
 
   cancel() {
-    this.navCtrl.pop();
+    this.navCtrl.pop().catch(_ => {});
   }
 
   submit(form) {
     this.persistFunction({ id: this.id, todo: this.todo });
-    this.navCtrl.pop();
+    this.navCtrl.pop().catch(_ => {});
   }
 
   create(input) {
